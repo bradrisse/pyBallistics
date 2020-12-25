@@ -132,6 +132,183 @@ def G1(vp):
     return acceleration, mass
 
 
+def G2(vp):
+    acceleration = -1
+    mass = -1
+
+    if vp > 1674:
+        acceleration = 0.0079470052136733
+        mass = 1.36999902851493
+    elif vp > 1172:
+        acceleration = 1.00419763721974e-03
+        mass = 1.65392237010294
+    elif vp > 1060:
+        acceleration = 7.15571228255369e-23
+        mass = 7.91913562392361
+    elif vp > 949:
+        acceleration = 1.39589807205091e-10
+        mass = 3.81439537623717
+    elif vp > 670:
+        acceleration = 2.34364342818625e-04
+        mass = 1.71869536324748
+    elif vp > 335:
+        acceleration = 1.77962438921838e-04
+        mass = 1.76877550388679
+    elif vp > 0:
+        acceleration = 5.18033561289704e-05
+        mass = 1.98160270524632
+
+    return acceleration, mass
+
+
+def G3(vp):
+    acceleration = -1
+    mass = -1
+
+    if vp > 1730:
+        acceleration = 7.24854775171929e-03
+        mass = 1.41538574492812
+    elif vp > 1228:
+        acceleration = 3.50563361516117e-05
+        mass = 2.13077307854948
+    elif vp > 1116:
+        acceleration = 1.84029481181151e-13
+        mass = 4.81927320350395
+    elif vp > 1004:
+        acceleration = 1.34713064017409e-22
+        mass = 7.8100555281422
+    elif vp > 837:
+        acceleration = 1.03965974081168e-07
+        mass = 2.84204791809926
+    elif vp > 335:
+        acceleration = 1.09301593869823e-04
+        mass = 1.81096361579504
+    elif vp > 0:
+        acceleration = 3.51963178524273e-05
+        mass = 2.00477856801111
+
+    return acceleration, mass
+
+
+def G5(vp):
+    acceleration = -1
+    mass = -1
+
+    if vp > 1730:
+        acceleration = 7.24854775171929e-03
+        mass = 1.41538574492812
+    elif vp > 1228:
+        acceleration = 3.50563361516117e-05
+        mass = 2.13077307854948
+    elif vp > 1116:
+        acceleration = 1.84029481181151e-13
+        mass = 4.81927320350395
+    elif vp > 1004:
+        acceleration = 1.34713064017409e-22
+        mass = 7.8100555281422
+    elif vp > 837:
+        acceleration = 1.03965974081168e-07
+        mass = 2.84204791809926
+    elif vp > 335:
+        acceleration = 1.09301593869823e-04
+        mass = 1.81096361579504
+    elif vp > 0:
+        acceleration = 3.51963178524273e-05
+        mass = 2.00477856801111
+
+    return acceleration, mass
+
+
+def G6(vp):
+    acceleration = -1
+    mass = -1
+
+    if vp > 3236:
+        acceleration = 0.0455384883480781
+        mass = 1.15997674041274
+    elif vp > 2065:
+        acceleration = 7.167261849653769e-02
+        mass = 1.10704436538885
+    elif vp > 1311:
+        acceleration = 1.66676386084348e-03
+        mass = 1.60085100195952
+    elif vp > 1144:
+        acceleration = 1.01482730119215e-07
+        mass = 2.9569674731838
+    elif vp > 1004:
+        acceleration = 4.31542773103552e-18
+        mass = 6.34106317069757
+    elif vp > 670:
+        acceleration = 2.04835650496866e-05
+        mass = 2.11688446325998
+    elif vp > 0:
+        acceleration = 7.50912466084823e-05
+        mass = 1.92031057847052
+
+    return acceleration, mass
+
+
+def G7(vp):
+    acceleration = -1
+    mass = -1
+
+    if vp > 4200:
+        acceleration = 1.29081656775919e-09
+        mass = 3.24121295355962
+    elif vp > 3000:
+        acceleration = 0.0171422231434847
+        mass = 1.27907168025204
+    elif vp > 1470:
+        acceleration = 2.33355948302505e-03
+        mass = 1.52693913274526
+    elif vp > 1260:
+        acceleration = 7.97592111627665e-04
+        mass = 1.67688974440324
+    elif vp > 1110:
+        acceleration = 5.71086414289273e-12
+        mass = 4.3212826264889
+    elif vp > 960:
+        acceleration = 3.02865108244904e-17
+        mass = 5.99074203776707
+    elif vp > 670:
+        acceleration = 7.52285155782535e-06
+        mass = 2.1738019851075
+    elif vp > 540:
+        acceleration = 1.31766281225189e-05
+        mass = 2.08774690257991
+    elif vp > 0:
+        acceleration = 1.34504843776525e-05
+        mass = 2.08702306738884
+
+    return acceleration, mass
+
+
+def G8(vp):
+    acceleration = -1
+    mass = -1
+
+    if vp > 3571:
+        acceleration = 0.0112263766252305
+        mass = 1.33207346655961
+    elif vp > 1841:
+        acceleration = 0.0167252613732636
+        mass = 1.28662041261785
+    elif vp > 1120:
+        acceleration = 2.20172456619625e-03
+        mass = 1.55636358091189
+    elif vp > 1088:
+        acceleration = 2.0538037167098e-16
+        mass = 5.80410776994789
+    elif vp > 976:
+        acceleration = 5.92182174254121e-12
+        mass = 4.29275576134191
+    elif vp > 0:
+        acceleration = 4.3917343795117e-05
+        mass = 1.99978116283334
+
+    return acceleration, mass
+
+
 def retard(drag_function, drag_coefficient, vp):
     """
       A function to calculate ballistic retardation values based on standard drag functions.
