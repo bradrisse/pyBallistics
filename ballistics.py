@@ -47,9 +47,7 @@ def solve(drag_function, drag_coefficient, vi, sight_height, shooting_angle, zer
         vx1 = vx
         vy1 = vy
         v = math.pow(math.pow(vx, 2)+math.pow(vy, 2), 0.5)
-        print("v {}".format(v))
         dt = 0.5/v
-        print("dt {}".format(dt))
 
         # Compute acceleration using the drag function retardation
         dv = drag.retard(drag_function, drag_coefficient, v+hwind)
@@ -65,12 +63,16 @@ def solve(drag_function, drag_coefficient, vi, sight_height, shooting_angle, zer
             if x > 0:
                 range_yards = round(x/3)
                 print("range_yards {}".format(range_yards))
-                if range_yards == 400:
-                    moa_correction = angles.rad_to_moa(math.atan(y / x))
-
-                    impact_in = utils.moaToInch(moa_correction, x)
-                    hold_overs.add_point(
-                        holdover(range_yards, moa_correction, impact_in))
+                # if range_yards == 400:
+                moa_correction = -angles.rad_to_moa(math.atan(y / x))
+                print("moa_correction {}". format(moa_correction))
+                path_inches = y*12
+                print("path_inches {}". format(path_inches))
+                impact_in = utils.moaToInch(moa_correction, x)
+                seconds = t+dt
+                print("seconds {}". format(seconds))
+                hold_overs.add_point(
+                    holdover(range_yards, moa_correction, impact_in, path_inches, seconds))
 
             n = n + 1
 
