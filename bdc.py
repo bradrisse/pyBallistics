@@ -1,9 +1,13 @@
 import atmosphere
 import angles
 import ballistics
+import logging
 
 
 def calcBDC(range):
+
+    logger = logging.getLogger()
+
     k = 0
     # The ballistic coefficient for the projectile.
     bc = 0.269
@@ -34,7 +38,8 @@ def calcBDC(range):
     bc = atmosphere.atmosphere_correction(
         bc, altitude, barometer, temperature, relative_humidity)
 
-    print("bc {}".format(bc))
+    logger.info("bc {}".format(bc))
+    # print("bc {}".format(bc))
 
     # First find the angle of the bore relative to the sighting system.
     # We call this the "zero angle", since it is the angle required to

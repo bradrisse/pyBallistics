@@ -8,8 +8,11 @@ import utils
 from holdover import holdover
 from points import points
 
+import logging
 
 def solve(drag_function, drag_coefficient, vi, sight_height, shooting_angle, zero_angle, wind_speed, wind_angle):
+
+    logger = logging.getLogger()
 
     t = 0
     dt = 0
@@ -62,15 +65,19 @@ def solve(drag_function, drag_coefficient, vi, sight_height, shooting_angle, zer
 
             if x > 0:
                 range_yards = round(x/3)
-                print("range_yards {}".format(range_yards))
+#                print("range_yards {}".format(range_yards))
+                logger.info("range_yards {}".format(range_yards))
                 # if range_yards == 400:
                 moa_correction = -angles.rad_to_moa(math.atan(y / x))
-                print("moa_correction {}". format(moa_correction))
+#                print("moa_correction {}". format(moa_correction))
+                logger.info("moa_correction {}". format(moa_correction))
                 path_inches = y*12
-                print("path_inches {}". format(path_inches))
+#                print("path_inches {}". format(path_inches))
+                logger.info("path_inches {}". format(path_inches))
                 impact_in = utils.moaToInch(moa_correction, x)
                 seconds = t+dt
-                print("seconds {}". format(seconds))
+#                print("seconds {}". format(seconds))
+                logger.info("seconds {}". format(seconds))
                 hold_overs.add_point(
                     holdover(range_yards, moa_correction, impact_in, path_inches, seconds))
 

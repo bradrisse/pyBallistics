@@ -3,6 +3,19 @@ from utils import get_incline_compensation
 from utils import get_cant_compensation
 import math
 
+import sys, logging
+
+#logLevel=logging.DEBUG
+logLevel=logging.INFO
+#logLevel=logging.WARNING
+#logLevel=logging.CRITICAL
+
+logging.basicConfig(format='%(levelname)s: %(message)s', level=logLevel, handlers=[logging.StreamHandler(sys.stdout)])
+
+logging.warning('Example Warning Message')
+
+logging.debug('Log Test Message')
+
 hold_overs = calcBDC(400)
 
 for point in hold_overs.points:
