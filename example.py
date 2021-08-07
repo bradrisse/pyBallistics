@@ -6,15 +6,20 @@ import math
 import sys, logging
 
 #logLevel=logging.DEBUG
-logLevel=logging.INFO
+#logLevel=logging.INFO
 #logLevel=logging.WARNING
-#logLevel=logging.CRITICAL
 
-logging.basicConfig(format='%(levelname)s : %(filename)s : %(funcName)s : %(lineno)4d : %(message)s', level=logLevel, handlers=[logging.StreamHandler(sys.stdout)])
+# If logLevel is unset, we will only display the most serious messages.
+try:
+    logLevel
+except NameError:
+    logLevel=logging.CRITICAL
+finally:
+    logging.basicConfig(format='%(levelname)s : %(filename)s : %(funcName)s : %(lineno)4d : %(message)s', level=logLevel, handlers=[logging.StreamHandler(sys.stdout)])
 
+logging.debug('Example Debug Message')
+logging.info('Example Info Message')
 logging.warning('Example Warning Message')
-
-logging.debug('Log Test Message')
 
 hold_overs = calcBDC(400)
 
