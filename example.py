@@ -6,7 +6,7 @@ import math
 import sys, logging
 
 #logLevel=logging.DEBUG
-#logLevel=logging.INFO
+logLevel=logging.INFO
 #logLevel=logging.WARNING
 
 # If logLevel is unset, we will only display the most serious messages.
