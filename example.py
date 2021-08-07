@@ -10,7 +10,7 @@ logLevel=logging.INFO
 #logLevel=logging.WARNING
 #logLevel=logging.CRITICAL
 
-logging.basicConfig(format='%(levelname)s: %(message)s', level=logLevel, handlers=[logging.StreamHandler(sys.stdout)])
+logging.basicConfig(format='%(levelname)s : %(filename)s : %(funcName)s : %(lineno)4d : %(message)s', level=logLevel, handlers=[logging.StreamHandler(sys.stdout)])
 
 logging.warning('Example Warning Message')
 
