@@ -1,5 +1,5 @@
 class holdover:
-    def __init__(self, yards, moa_correction, impact_in, path_inches, seconds):
+    def __init__(self, yards, meters, moa_correction, mil_correction, impact_in, path_inches, seconds):
         self.yards = yards
         self.meters = meters
         self.moa_correction = moa_correction
