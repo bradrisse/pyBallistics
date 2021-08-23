@@ -20,6 +20,10 @@ def calcBDC(range):
     # The wind angle (0=headwind, 90=right to left, 180=tailwind, 270/-90=left to right)
     windangle = 0
 
+    # Numbers for 22lr CCI Standard Velocity
+#    bc = 0.122
+#    v = 1070
+
     altitude = 0
     barometer = 29.59
     temperature = 59
