@@ -14,7 +14,11 @@ def calcBDC(range):
     # The shooting angle (uphill / downhill), in degrees.
     angle = 0
     # The zero range of the rifle, in yards.
-    zero = 50
+#    zero = 50
+#    zero = 100
+    zero = 200
+#    zero_unit = 'm'
+    zero_unit = 'y'
     # The wind speed in miles per hour.
     windspeed = 0
     # The wind angle (0=headwind, 90=right to left, 180=tailwind, 270/-90=left to right)
@@ -39,6 +43,11 @@ def calcBDC(range):
         bc, altitude, barometer, temperature, relative_humidity)
 
     print("bc {}".format(bc))
+
+    # Convert zero range in meters to yards for calculating the zero angle
+    if zero_unit.lower() == 'm':
+#        zero = zero*1.093613
+        zero = zero*((100/2.54)/36)
 
     # First find the angle of the bore relative to the sighting system.
     # We call this the "zero angle", since it is the angle required to
