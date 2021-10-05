@@ -9,7 +9,7 @@ import utils
 from holdover import holdover
 from points import points
 
-def solve(drag_function, drag_coefficient, vi, sight_height, shooting_angle, zero_angle, wind_speed, wind_angle):
+def solve(range_max, drag_function, drag_coefficient, vi, sight_height, shooting_angle, zero_angle, wind_speed, wind_angle):
 
     t = 0
     dt = 0
@@ -25,7 +25,8 @@ def solve(drag_function, drag_coefficient, vi, sight_height, shooting_angle, zer
     y = 0
 
     # Convert BALLISTICS_COMPUTATION_MAX_YARDS to feet
-    r = math.floor(constants.BALLISTICS_COMPUTATION_MAX_YARDS*3)
+#    r = math.floor(constants.BALLISTICS_COMPUTATION_MAX_YARDS*3)
+    r = math.floor((range_max+1)*3)
 
     step_feet = [*range(1, r, 1)]
     step_meters = [*np.arange(0.8202, r, 0.8202)]

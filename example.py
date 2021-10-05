@@ -3,7 +3,10 @@ from utils import get_incline_compensation
 from utils import get_cant_compensation
 import math
 
-hold_overs = calcBDC(400)
+#hold_overs = calcBDC(400)
+#hold_overs = calcBDC(range = 400, zero_unit = "m")
+#hold_overs = calcBDC(zero_unit = "m", range = 400)
+hold_overs = calcBDC()
 
 print()
 print("All Points in hold_overs:")
